@@ -8,7 +8,13 @@ provider "aws" {
 
 
 resource "aws_instance" "my_ubuntu" {
+      count = 3
       ami = "ami-08c40ec9ead489470"
       instance_type = "t3.small"
+      tags = {
+        Name = "aws"
+        Owner = "Kyrylo Iershov"
+        Project = "Terraform practice"
+      }
     }
     
